@@ -1,1 +1,827 @@
-lol
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>✨ Humiaa · Selamat Hari Jadi ✨</title>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(165deg, #fce4ec 0%, #f8d5e6 30%, #f3c7e0 70%, #fad0e5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* main card – soft glass with pink aura */
+    .birthday-card {
+      max-width: 540px;
+      width: 100%;
+      background: rgba(255, 240, 245, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-radius: 56px;
+      border: 1.5px solid rgba(255, 200, 220, 0.5);
+      box-shadow: 0 30px 50px rgba(210, 100, 140, 0.2), 0 0 0 2px rgba(255, 220, 230, 0.4) inset, 0 0 40px #ffb6d9;
+      padding: 32px 24px 36px;
+      transition: box-shadow 0.3s ease;
+      animation: softGlow 7s infinite alternate ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes softGlow {
+      0% { box-shadow: 0 30px 45px rgba(210, 120, 150, 0.15), 0 0 0 2px #ffe4ef inset, 0 0 30px #ffbfd4; }
+      100% { box-shadow: 0 40px 60px rgba(200, 90, 140, 0.25), 0 0 0 4px #ffeef4 inset, 0 0 55px #ffb3cf; }
+    }
+
+    .birthday-card::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #ffd9e8 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.4;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .birthday-card::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, #fbc1d9 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 5;
+    }
+
+    /* header */
+    .greeting-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .flag-badge {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pk-flag, .my-flag {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 8px 16px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #5e2e4a;
+      box-shadow: 0 4px 10px rgba(200, 120, 140, 0.1);
+      border: 1px solid #ffdae9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .distance-bridge {
+      background: #ffe2efcc;
+      border-radius: 40px;
+      padding: 8px 16px;
+      font-weight: 600;
+      color: #812e5e;
+      border: 1px solid #ffb6d0;
+      backdrop-filter: blur(5px);
+      font-size: 0.9rem;
+    }
+
+    /* hero */
+    .hero-title {
+      text-align: center;
+      margin: 8px 0 4px;
+    }
+
+    .to-humiaa {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      font-weight: 600;
+      color: #a14a72;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      background: linear-gradient(145deg, #a63c6e, #c95f8f, #d96fa0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.1;
+      margin: 6px 0 8px;
+    }
+
+    .malaysia-love {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #5f3550;
+      font-weight: 600;
+    }
+
+    /* AMAZING CAKE SECTION */
+    .cake-showcase {
+      margin: 8px 0 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cake-masterpiece {
+      position: relative;
+      width: 200px;
+      filter: drop-shadow(0 15px 20px rgba(180, 60, 100, 0.3));
+    }
+
+    /* Cake Plate */
+    .cake-plate {
+      width: 220px;
+      height: 18px;
+      background: linear-gradient(135deg, #e8c3d0, #d4a5b9);
+      border-radius: 30px;
+      margin: 0 auto;
+      box-shadow: 0 8px 0 #b8879a, 0 12px 20px rgba(0,0,0,0.1);
+      position: relative;
+      top: 5px;
+    }
+
+    /* Cake Layers */
+    .cake-layer {
+      position: relative;
+      border-radius: 12px 12px 8px 8px;
+      margin: 0 auto;
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,0.05), 0 6px 0 rgba(160, 70, 100, 0.3);
+    }
+
+    .layer-1 {
+      width: 190px;
+      height: 45px;
+      background: linear-gradient(145deg, #f7bfd4, #e38aa3);
+      border-radius: 16px 16px 10px 10px;
+      box-shadow: inset 0 -6px 0 rgba(0,0,0,0.08), 0 8px 0 #b35f7a;
+      margin-bottom: -2px;
+    }
+
+    .layer-2 {
+      width: 160px;
+      height: 40px;
+      background: linear-gradient(145deg, #ffe0b5, #f5c7a3);
+      border-radius: 12px 12px 8px 8px;
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,0.06), 0 7px 0 #d4a373;
+      margin: -2px auto 0;
+    }
+
+    .layer-3 {
+      width: 130px;
+      height: 35px;
+      background: linear-gradient(145deg, #fdd0e6, #f3b7d3);
+      border-radius: 10px 10px 6px 6px;
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,0.05), 0 6px 0 #c97fa0;
+      margin: -2px auto 0;
+    }
+
+    /* Frosting drips */
+    .frosting-drip {
+      position: absolute;
+      bottom: -8px;
+      width: 18px;
+      height: 14px;
+      background: inherit;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .layer-1 .frosting-drip { left: 20px; background: #e38aa3; }
+    .layer-1 .frosting-drip:nth-child(2) { left: auto; right: 25px; }
+    .layer-2 .frosting-drip { left: 18px; background: #f5c7a3; }
+    .layer-2 .frosting-drip:nth-child(2) { left: auto; right: 20px; }
+
+    /* Candle */
+    .candle-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -25px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .candle-stick {
+      width: 10px;
+      height: 45px;
+      background: linear-gradient(145deg, #fff8e7, #ffe9b5);
+      border-radius: 6px 6px 3px 3px;
+      box-shadow: inset -2px 0 5px rgba(0,0,0,0.05), 0 3px 0 #d4a373;
+      position: relative;
+    }
+
+    .candle-stripe {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: #f0547a;
+      top: 12px;
+    }
+
+    .candle-stripe:nth-child(2) {
+      top: 24px;
+      background: #ffb347;
+    }
+
+    .flame {
+      width: 18px;
+      height: 28px;
+      background: radial-gradient(circle at 30% 30%, #fff7b0, #ff9f1c, #ff6b35);
+      border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+      margin-top: -8px;
+      box-shadow: 0 0 25px #ffb347;
+      animation: flickerCandle 0.6s infinite alternate ease-in-out;
+      position: relative;
+    }
+
+    .flame::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 12px;
+      background: #fff9c4;
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+      filter: blur(2px);
+    }
+
+    @keyframes flickerCandle {
+      0% { transform: scale(1) rotate(-2deg); opacity: 0.95; }
+      100% { transform: scale(1.08, 1.2) rotate(3deg); opacity: 1; }
+    }
+
+    /* Sprinkles */
+    .sprinkle {
+      position: absolute;
+      width: 5px;
+      height: 12px;
+      border-radius: 4px;
+      background: #ff6b9d;
+      transform: rotate(45deg);
+      z-index: 5;
+    }
+
+    .sprinkle:nth-child(1) { top: 10px; left: 30px; background: #ffb347; }
+    .sprinkle:nth-child(2) { top: 25px; right: 35px; background: #6ec4e0; }
+    .sprinkle:nth-child(3) { top: 45px; left: 50px; background: #a56de2; }
+    .sprinkle:nth-child(4) { top: 60px; right: 40px; background: #ff8a5c; }
+
+    /* avatar */
+    .photo-frame {
+      margin: 0 0 16px;
+      position: relative;
+    }
+
+    .avatar-glow {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbc7da, #f3b7d3, #f9cedf);
+      padding: 4px;
+      box-shadow: 0 0 35px #ffacc9;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #f9e3ed url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="42" r="24" fill="%23FCE1D4"/><circle cx="36" cy="38" r="4.5" fill="%23442C2A"/><circle cx="64" cy="38" r="4.5" fill="%23442C2A"/><path d="M41 54 Q50 66,59 54" stroke="%23C85A7A" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M24 72 Q50 88,76 72" stroke="%23BA7B6A" stroke-width="6" fill="%23D9A89C" opacity="0.9"/><path d="M22 28 L35 14 L50 26 L65 14 L78 28" stroke="%23E6A8B0" stroke-width="5" fill="%23FAD2D8" opacity="0.9"/><text x="26" y="94" font-family="Plus Jakarta Sans" font-size="15" fill="%23A63C6E" font-weight="800">HUMIAA</text></svg>') center/cover no-repeat;
+      background-size: 85%;
+      background-position: center 42%;
+      background-color: #fad6e6;
+      border: 2.5px solid #ffffffd0;
+      box-shadow: inset 0 3px 12px #b3597a30;
+    }
+
+    .floating-hearts {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: -12px;
+      font-size: 1.6rem;
+      color: #cf578b;
+    }
+
+    /* message */
+    .message-box {
+      background: rgba(255, 245, 250, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 48px;
+      padding: 24px 18px;
+      margin: 20px 0 24px;
+      border: 1.5px solid #ffe2f0;
+    }
+
+    .quote {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #502e42;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .pk-to-my {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 14px 0 10px;
+    }
+
+    .distance-text {
+      background: #ffe3efcc;
+      padding: 10px 22px;
+      border-radius: 60px;
+      color: #511f38;
+      font-weight: 600;
+      border-left: 4px solid #d45f91;
+      border-right: 4px solid #b77a9c;
+    }
+
+    .special-note {
+      color: #3e1d30;
+      font-size: 0.95rem;
+      margin-top: 18px;
+      background: #fcedf5cc;
+      padding: 14px 12px;
+      border-radius: 36px;
+      text-align: center;
+      border: 1px dashed #c26894;
+    }
+
+    /* surprise button */
+    .surprise-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-surprise {
+      background: linear-gradient(145deg, #fec5da, #fbb1cb);
+      border: none;
+      padding: 18px 34px;
+      border-radius: 120px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3b1a2b;
+      box-shadow: 0 16px 30px -6px #c95f8f, 0 0 0 2px #fff2f8 inset;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-bottom: 8px;
+      border: 1px solid #fff0f7;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-surprise:active {
+      transform: scale(0.96);
+    }
+
+    .surprise-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s, margin 0.3s;
+      background: rgba(255, 240, 248, 0.65);
+      backdrop-filter: blur(16px);
+      border-radius: 44px;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .surprise-content.show {
+      max-height: 700px;
+      opacity: 1;
+      margin-top: 28px;
+      border: 1.5px solid #ffdae9;
+      padding: 26px 20px 22px;
+    }
+
+    .gift-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .virtual-gift {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #fff2f9cc;
+      padding: 16px 20px;
+      border-radius: 50px;
+      border: 1px solid #fec7de;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    .gift-icon {
+      font-size: 2.2rem;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: #fce1ed;
+      color: #ac386b;
+    }
+
+    .gift-text h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #3f1e30;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      color: #6b3e58;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* modals */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(30, 10, 20, 0.5);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.25s;
+      padding: 16px;
+    }
+
+    .modal-overlay.show-modal {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-card {
+      max-width: 460px;
+      width: 100%;
+      background: #fffafd;
+      border-radius: 48px;
+      padding: 28px 24px;
+      box-shadow: 0 30px 50px #b3527a40;
+      border: 2px solid #ffe0ef;
+      transform: scale(0.95);
+      transition: transform 0.3s;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.show-modal .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-card h3 {
+      font-size: 1.8rem;
+      color: #9e3a66;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .close-modal {
+      background: #f3c6db;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: #3b1f2e;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    /* bouquet */
+    .flower-bouquet {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 3.5rem;
+      margin: 20px 0;
+    }
+
+    /* gallery with 3 real photos */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .gallery-img {
+      aspect-ratio: 1;
+      background: #fad2e1;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #ac386b;
+      border: 2px solid #ffe0f0;
+      overflow: hidden;
+    }
+    .gallery-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* letter styling */
+    .letter-body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #2b1622;
+      line-height: 1.7;
+    }
+    .letter-body p {
+      margin-bottom: 14px;
+    }
+
+    /* heartbeat */
+    .pulse-heart {
+      animation: heartbeat 1.4s infinite;
+    }
+    @keyframes heartbeat {
+      0%,100%{ transform: scale(1); }
+      30%{ transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+<div class="birthday-card">
+  <div class="content-wrapper">
+    <div class="greeting-top">
+      <div class="flag-badge">
+        <div class="pk-flag"><i class="fas fa-flag"></i> 🇵🇰 PK</div>
+        <div class="my-flag"><i class="fas fa-flag"></i> 🇲🇾 MY</div>
+      </div>
+      <div class="distance-bridge">
+        <i class="fas fa-heart"></i> 4500km <i class="fas fa-heart"></i>
+      </div>
+    </div>
+
+    <div class="hero-title">
+      <div class="to-humiaa"><i class="fas fa-star"></i> for my dearest <i class="fas fa-star"></i></div>
+      <h1>Humiaa</h1>
+    </div>
+
+    <div class="malaysia-love">
+      <span><i class="fas fa-map-pin"></i> Kuala Lumpur</span>
+      <span><i class="fas fa-heart"></i> Pakistan · Malaysia</span>
+    </div>
+
+    <!-- AMAZING CAKE RIGHT HERE -->
+    <div class="cake-showcase">
+      <div class="cake-masterpiece">
+        <div class="layer-1">
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+          <div class="sprinkle"></div>
+        </div>
+        <div class="layer-2">
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+        </div>
+        <div class="layer-3"></div>
+        <div class="candle-wrapper">
+          <div class="candle-stick">
+            <div class="candle-stripe"></div>
+            <div class="candle-stripe"></div>
+          </div>
+          <div class="flame"></div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+    </div>
+
+    <div class="photo-frame">
+      <div class="avatar-glow">
+        <div class="avatar-inner"></div>
+      </div>
+      <div class="floating-hearts">
+        <i class="fas fa-heart pulse-heart"></i>
+        <i class="fas fa-heart pulse-heart" style="animation-delay: 0.3s;"></i>
+        <i class="fas fa-heart pulse-heart" style="animation-delay: 0.6s;"></i>
+      </div>
+    </div>
+
+    <div class="message-box">
+      <div class="quote">“Happy 27th Birthday, <br> my dear Humiaa 🌸”</div>
+      <div class="pk-to-my">
+        <span style="font-size:1.8rem;">🇵🇰</span>
+        <span class="distance-text"><i class="fas fa-paper-plane"></i> across oceans</span>
+        <span style="font-size:1.8rem;">🇲🇾</span>
+      </div>
+      <div class="special-note">
+        <i class="fas fa-gem" style="margin-right: 6px; color:#b84a7a;"></i> 
+        From Pakistan to Malaysia — my wishes travel through this screen. 
+        <br>✨ Selamat Hari Jadi! ✨
+      </div>
+    </div>
+
+    <div class="surprise-section">
+      <button class="btn-surprise" id="surpriseBtn">
+        <i class="fas fa-gift"></i> Open your surprise 
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="surprise-content" id="surpriseBox">
+        <div class="gift-grid">
+          <!-- Bouquet only, cake removed -->
+          <div class="virtual-gift" id="bouquetGift">
+            <div class="gift-icon"><i class="fas fa-leaf"></i></div>
+            <div class="gift-text"><h4>Hibiscus & Roses</h4><p>Malaysia's national flower</p></div>
+          </div>
+          <div class="virtual-gift" id="spotifyGift">
+            <div class="gift-icon"><i class="fab fa-spotify"></i></div>
+            <div class="gift-text"><h4>Custom Playlist</h4><p>PK & MY birthday jams</p></div>
+          </div>
+          <div class="virtual-gift" id="collageGift">
+            <div class="gift-icon"><i class="fas fa-images"></i></div>
+            <div class="gift-text"><h4>Memory Collage</h4><p>Our special moments</p></div>
+          </div>
+          <div class="virtual-gift" id="letterGift">
+            <div class="gift-icon"><i class="fas fa-envelope-open-text"></i></div>
+            <div class="gift-text"><h4>A Letter for You</h4><p>💌 from my heart to yours</p></div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center; gap:12px; margin: 20px 0; color:#ac386b; font-size:1.6rem;">
+          <i class="fas fa-heart"></i><i class="fas fa-star"></i><i class="fas fa-heart"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note">💖 Pakistan to Malaysia · 27 & Fabulous · 2025 💖</div>
+  </div>
+</div>
+
+<!-- MODALS -->
+<!-- Bouquet Modal -->
+<div class="modal-overlay" id="bouquetModal">
+  <div class="modal-card">
+    <h3><i class="fas fa-leaf"></i> Hibiscus & Roses</h3>
+    <div class="flower-bouquet">
+      <span>🌺</span><span>🌹</span><span>🌺</span><span>🌸</span><span>🌹</span>
+    </div>
+    <p style="color:#502e42; text-align:center;">Hibiscus — Malaysia's pride, and roses because you're precious. 🌺🇲🇾</p>
+    <button class="close-modal" data-modal="bouquetModal">Beautiful! Close</button>
+  </div>
+</div>
+
+<!-- Spotify Modal -->
+<div class="modal-overlay" id="spotifyModal">
+  <div class="modal-card">
+    <h3><i class="fab fa-spotify"></i> Playlist</h3>
+    <p style="margin:20px 0; font-size:1.1rem;">🎧 "Humiaa's Birthday Jams" — a mix of Pakistani & Malaysian hits!</p>
+    <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" style="display:block; background:#1db954; color:white; padding:14px; border-radius:40px; text-align:center; text-decoration:none; font-weight:700; margin-bottom:12px;"><i class="fab fa-spotify"></i> Open Playlist</a>
+    <button class="close-modal" data-modal="spotifyModal">Close</button>
+  </div>
+</div>
+
+<!-- Collage Modal with 3 photos -->
+<div class="modal-overlay" id="collageModal">
+  <div class="modal-card">
+    <h3><i class="fas fa-images"></i> Memory Collage</h3>
+    <div class="gallery">
+      <div class="gallery-img">
+        <img src="image1.jpg" alt="Humiaa photo 1">
+      </div>
+      <div class="gallery-img">
+        <img src="image2.jpg" alt="Humiaa photo 2">
+      </div>
+      <div class="gallery-img">
+        <img src="image3.jpg" alt="Humiaa photo 3">
+      </div>
+    </div>
+    <p style="color:#502e42; text-align:center;">Three beautiful memories — and counting. Can't wait to add more! 📸</p>
+    <button class="close-modal" data-modal="collageModal">Cherish · Close</button>
+  </div>
+</div>
+
+<!-- Letter Modal -->
+<div class="modal-overlay" id="letterModal">
+  <div class="modal-card">
+    <h3><i class="fas fa-pen-fancy"></i> My Dearest Humiaa,</h3>
+    <div class="letter-body">
+      <p>Happy 27th Birthday 🌸</p>
+      <p>It's honestly a little strange how someone you met just a few months ago can start to feel so comfortable, so familiar, but that's exactly what you became to me. From our very first video call, there was this ease, this calmness in talking to you that I didn't expect… but I'm really grateful for it.</p>
+      <p>We've never had a fight, not even a moment where things felt heavy between us, and that says a lot. In such a short time, you gave me a space that felt peaceful, safe, and real… and that's rare.</p>
+      <p>I know life hasn't been easy on you, especially where you are right now in Malaysia. You've been dealing with so much, probably more than you even show, but even then, you carry yourself with such strength and softness at the same time. And honestly… I admire that more than I can explain.</p>
+      <p>On your birthday, I don't just wish you success or achievements, I wish you peace. The kind of peace that stays. I wish that whatever is heavy in your heart becomes lighter, that your problems slowly fade, and that life finally starts being gentle with you.</p>
+      <p>May Allah protect you wherever you are, guide you through every difficulty, and replace every worry of yours with something beautiful. May He give you strength when you feel tired, comfort when you feel alone, and happiness that reaches you in unexpected ways. And if there's any pain written for you, may He make it easier… or take it away from you completely, Ameen.</p>
+      <p>And I won't lie… in this short time, you've become someone I genuinely like, not just for how you talk, but for who you are. There's something about you that feels rare… and real.</p>
+      <p>Thank you for being you. Truly.</p>
+      <p>I hope today brings you even a small moment where you forget all your worries and just smile, because you deserve that, more than you think.</p>
+      <p class="letter-signature">With all my heart,<br>Your friend from Pakistan 🇵🇰</p>
+    </div>
+    <button class="close-modal" data-modal="letterModal"><i class="fas fa-heart"></i> Keep smiling, always</button>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const surpriseBox = document.getElementById('surpriseBox');
+
+    // toggle surprise panel
+    surpriseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isShown = surpriseBox.classList.toggle('show');
+      surpriseBtn.innerHTML = isShown ? 
+        `<i class="fas fa-heart" style="color:#ac386b;"></i> Yay! Enjoy <i class="fas fa-chevron-down"></i>` :
+        `<i class="fas fa-gift"></i> Open your surprise <i class="fas fa-chevron-right"></i>`;
+    });
+
+    // modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('show-modal');
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('show-modal');
+    }
+
+    // gift triggers
+    document.getElementById('bouquetGift').addEventListener('click', () => openModal('bouquetModal'));
+    document.getElementById('spotifyGift').addEventListener('click', () => openModal('spotifyModal'));
+    document.getElementById('collageGift').addEventListener('click', () => openModal('collageModal'));
+    document.getElementById('letterGift').addEventListener('click', () => openModal('letterModal'));
+
+    // close buttons
+    document.querySelectorAll('.close-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const modalId = e.target.dataset.modal;
+        if (modalId) closeModal(modalId);
+        else {
+          const overlay = e.target.closest('.modal-overlay');
+          if (overlay) overlay.classList.remove('show-modal');
+        }
+      });
+    });
+
+    // click overlay to close
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.classList.remove('show-modal');
+      });
+    });
+
+    // avatar click bonus
+    document.querySelector('.avatar-glow')?.addEventListener('click', () => {
+      alert('💖 Selamat Hari Jadi Humiaa! You are loved 💖');
+    });
+
+  })();
+</script>
+</body>
+</html>
